@@ -41,7 +41,7 @@ fun Date.humanizeDiff(): String {
             "${diff/ MINUTE} ${
             if (diff/MINUTE in 10..20)
                 "минут"
-            else when((diff/ MINUTE).rem(10).toInt()) {
+            else when(((diff/MINUTE)%10).toInt()) {
                 1-> "минуту"
                 2,3,4-> "минуты"
                 else->"минут"
@@ -51,7 +51,7 @@ fun Date.humanizeDiff(): String {
             "${diff/ HOUR} ${
             if (diff/HOUR in 10..20)
                 "часов"
-            else when((diff/ HOUR).rem(10).toInt()) {
+            else when(((diff/ HOUR)%10).toInt()) {
                 1-> "час"
                 2,3,4-> "часа"
                 else->"часов"
@@ -61,7 +61,7 @@ fun Date.humanizeDiff(): String {
             "${diff/ DAY} ${
             if (diff/DAY in 10..20) 
                 "дней" 
-            else when((diff/ DAY).rem(10).toInt()) {
+            else when(((diff/ DAY)%10).toInt()) {
                 1-> "день"
                 2,3,4-> "дня"
                 else->"дней" 

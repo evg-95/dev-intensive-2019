@@ -8,6 +8,8 @@ import ru.skillbranch.devintensive.extensions.add
 import ru.skillbranch.devintensive.models.BaseMessage
 import ru.skillbranch.devintensive.models.Chat
 import ru.skillbranch.devintensive.models.User
+import ru.skillbranch.devintensive.utils.Utils.toInitials
+import ru.skillbranch.devintensive.utils.Utils.transliteration
 import java.util.*
 
 /**
@@ -30,6 +32,8 @@ class ExampleUnitTest {
         list.add(user1)
 
         var chat = Chat.makeChat(list)
-        println(BaseMessage.makeMessage(user, chat, Date().add(-12, TimeUnits.MINUTE),payload = "Hi!").formatMessage())
+        println(BaseMessage.makeMessage(user, chat, Date().add(-22, TimeUnits.MINUTE),payload = "Hi!").formatMessage())
+        println(toInitials(" ",""))
+        println(transliteration("Евгений Измайлов".toString(),"_"))
     }
 }
