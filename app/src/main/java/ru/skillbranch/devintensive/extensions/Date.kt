@@ -35,7 +35,7 @@ fun Date.humanizeDiff(date: Date = Date()): String {
     val diff = date.time - this.time
     return when (diff) {
         in 0 .. SECOND->"только что"
-        in SECOND..45* SECOND->"несколько секунт назад"
+        in SECOND..45* SECOND->"несколько секунд назад"
         in 45* SECOND..75*SECOND->"минуту назад"
         in 75* SECOND..45* MINUTE->
             "${diff/ MINUTE} ${
