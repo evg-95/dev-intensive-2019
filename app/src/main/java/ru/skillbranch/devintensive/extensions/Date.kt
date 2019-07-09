@@ -31,8 +31,8 @@ enum class TimeUnits{
     DAY
 }
 
-fun Date.humanizeDiff(): String {
-    val diff = Date().time - this.time
+fun Date.humanizeDiff(date: Date = Date()): String {
+    val diff = date.time - this.time
     return when (diff) {
         in 0 .. SECOND->"только что"
         in SECOND..45* SECOND->"несколько секунт назад"
